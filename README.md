@@ -29,6 +29,10 @@
     <img alt="Tela 01" src="_images/image-1.png" width="75%" style="margin: 15px 0" />
 </p>
 
+<p align="center">
+    <img alt="Tela 02" src="_images/image-2.png" width="75%" style="margin: 15px 0" />
+</p>
+
 ---
 
 #### Descrição

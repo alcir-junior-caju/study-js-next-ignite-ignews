@@ -1,4 +1,4 @@
-import { GetStaticProps } from "next";
+import { GetStaticPaths, GetStaticProps } from "next";
 import { useSession } from "next-auth/client";
 import Head from "next/head";
 import Link from "next/link";
@@ -56,9 +56,11 @@ const PostPreview = ({ post }: PostPreviewProps) => {
 
 export default PostPreview;
 
-export const getStaticPaths = () => {
+export const getStaticPaths: GetStaticPaths = async () => {
     return {
-        paths: [],
+        paths: [
+            // { params: { slug: 'mapas-com-react-usando-leaflet' } }
+        ],
         fallback: 'blocking'
     }
 };
@@ -82,6 +84,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     return {
         props: {
             post
-        }
+        },
+        revalidate: 60 * 30, // 30 minutes
     }
 };
